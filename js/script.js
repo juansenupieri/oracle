@@ -2,6 +2,7 @@
 let player1 = document.getElementById('player1')
 let player2 = document.getElementById('player2')
 let boton = document.getElementById('enviar')
+let cerrar = document.getElementById('cerrar')
 let view_1 = document.getElementById('view-1')
 let view_2 = document.getElementById('view-2')
 let cards_box = document.getElementById('cards')
@@ -105,6 +106,7 @@ function showCards(unArray) {
         let desc = `<p>Some representative placeholder content for the first slide.</p>`
         let card = `<img src="images/cards/${unArray.card1}.png" class="center">`
         let contenedor = document.createElement('div')
+        contenedor.id = 'delete'
         contenedor.className = 'carousel-item active'
         contenedor.innerHTML +=title
         contenedor.innerHTML +=card
@@ -122,6 +124,7 @@ function showCards(unArray) {
         let desc = `<p>Some representative placeholder content for the first slide.</p>`
         let card = `<img src="images/cards/${carta}.png" class="center">`
         let contenedor = document.createElement('div')
+        contenedor.id = 'delete'
         contenedor.className = 'carousel-item'
         contenedor.innerHTML +=title
         contenedor.innerHTML +=card
@@ -139,6 +142,7 @@ function showCards(unArray) {
         let desc = `<p>Some representative placeholder content for the first slide.</p>`
         let card = `<img src="images/cards/${carta}.png" class="center">`
         let contenedor = document.createElement('div')
+        contenedor.id = 'delete'
         contenedor.className = 'carousel-item'
         contenedor.innerHTML +=title
         contenedor.innerHTML +=card
@@ -156,16 +160,16 @@ console.log(partidas)
 
 //--------------------ACTIONS--------------------------
 
-boton.addEventListener( 'click', ()=>{
+boton.addEventListener( 'click', () => {
     let user1 = player1.value
     let user2 = player2.value
     if( user1 != '' && user2 != '' ){
-        alert('Jugando!')
         partida = Match(user1,user2)
         showCards(partida)
         console.log(partida)
         view_1.className = 'hide'
-        view_2.className = 'show'
+        view_2.className = 'view-2'
+        alert(partida.match)
     }else{ 
         alert( 'Por favor, ingresá un nombre para el Player 1 y el Player 2.')
     }
@@ -174,22 +178,12 @@ boton.addEventListener( 'click', ()=>{
 
 })
 
-/*
-verCards.addEventListener( 'click',()=>{
-    if(usersView.innerHTML == ''){
-        let contenedor = document.createElement('div')
-        contenedor.id = 'u-container'
-        for(let i=0; i<cards.length; i++){
-            let imagen = `<img src="images/cards/${i}.png" alt="">`
-            let parrafo = document.createElement('p')
-            let completo = document.createTextNode( cards[i].name +' - '+cards[i].age)
-            parrafo.appendChild(completo)
-            contenedor.innerHTML += imagen
-            contenedor.appendChild(parrafo)
-        }
-        usersView.appendChild(contenedor)
-    }else{
-        let eliminar = document.getElementById('u-container')
-        usersView.removeChild(eliminar)
+cerrar.addEventListener( 'click', () => {
+    view_1.className = 'view-1'
+    view_2.className = 'hide';
+
+    for( let i=0; i<6; i++){
+        document.getElementById('delete').remove() 
     }
-})  */
+
+})
