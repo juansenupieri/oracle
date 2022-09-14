@@ -2,6 +2,14 @@ body {
     background: #FFEEDD;
 }
 
+.right {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
 section {
     color: black;
     display: flex;
@@ -15,9 +23,12 @@ section div p {
     text-align: center;
 }
 
+section h1 {
+    margin-bottom: 30px;
+}
+
 .show {
     display: flex;
-    margin-top: 40px;
 }
 
 .hide {
@@ -25,11 +36,11 @@ section div p {
 }
 
 .center {
-    width: 60vw;
-    margin-left: 20vw;
-    margin-right: 20vw;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    width: 50vw;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .carousel-indicators {
@@ -47,22 +58,48 @@ p {
 
 .view-1 {
     margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 90vh;
+    width: 100%;
 }
 
 .view-2 {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 90vh;
+    width: 100%;
 }
 
 header {
     background: #ffac58e8;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     color: #FFEEDD;
+    height: 10vh;
 }
 
 header h1 {
     text-align: center;
+    padding: 15px;
+}
+
+footer {
+    background: #000000e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #FFEEDD;
+    height: 10vh;
+}
+
+footer p {
+    text-align: center;
+    font-size: 10px;
     padding: 15px;
 }
